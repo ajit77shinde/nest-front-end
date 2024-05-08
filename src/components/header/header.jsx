@@ -6,26 +6,6 @@ const Header = () => {
     <>
       <header>
         <div className="containe-fluid">
-          <div className="header-section d-flex">
-            <div>
-              <ul className="d-flex">
-                <li><a href=""></a>About US |</li>
-                <li> <a href=""></a>My Account |</li>
-                <li> <a href=""></a>Wishlist |</li>
-                <li><a href=""></a>Order Tracking</li>
-              </ul>
-            </div>
-
-            <div className="tranding-News">Trendy 25silver jewelry, save up 35% off today </div>
-            <div className="help">
-              <ul className="d-flex">
-                <li>Need help? Call Us: + 1800 900</li>
-                <li>English <span class="material-icons">expand_more</span></li>
-                <li>USD <span class="material-icons">expand_more</span></li>
-              </ul>
-            </div>
-          </div>
-
           <div className="section-search header-section d-flex">
             <div className="col-sm-2">
               <img src={Logo} alt="" />
@@ -47,20 +27,46 @@ const Header = () => {
 
           <div className="header-section">
             <div className="main-menu-contents">
-              <ul>
-                </ul>
-                <li><a href="">Trending Categories</a></li>
-                <li><a href="">Deals</a></li>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">Vendors</a></li>
-                <li><a href="">Mego Menu</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Pages</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">1900-888 24/7 Support Center</a></li>
-                </div>
+              <span className="button"><span class="material-symbols-outlined">
+                grid_view
+              </span> Trending Categories  <span class="material-symbols-outlined">
+                  expand_more
+                </span></span>
+              <ul className="d-flex">
+                <li><a href="/deals"> <i class="fa-solid fa-user"></i><span class="material-symbols-outlined">
+                  local_fire_department
+                </span>  Deals</a></li>
+                <li><a href="/home">Home <span class="inline-icon material-symbols-outlined">
+                  expand_more
+                </span></a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="shop">Shop <span class="material-symbols-outlined">
+                  expand_more
+                </span> </a></li>
+                <li><a href="/venders">Vendors <span class="material-symbols-outlined">
+                  expand_more
+                </span></a></li>
+                <li><a href="/mega_menu">Mego Menu <span class="material-symbols-outlined">
+                  expand_more
+                </span></a></li>
+                <li><a href="/blog">Blog <span class="material-symbols-outlined">
+                  expand_more
+                </span></a></li>
+                <li><a href="/pages">Pages <span class="material-symbols-outlined">
+                  expand_more
+                </span></a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href=""></a></li>
+              </ul>
+              <span><span class="material-symbols-outlined">
+                headphones
+              </span>
+                <span>
+                  <span>1900-888 24/7</span>
+                  <span>Support Center</span>
+                </span>
+              </span>
+            </div>
           </div>
 
 
