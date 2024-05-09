@@ -17,7 +17,7 @@
   width: 100%;
   height: 25px;
   margin: 4.5px 0;
-  position: relative;
+  /* position: relative;   */
   height: auto;
 }
 
@@ -119,7 +119,7 @@ ul > li {
 }
 
 .main-menu-contents ul li {
-  padding: 6px 15px;
+  padding: 6px 18px;
 }
 
 .main-menu-contents ul li a{
@@ -134,9 +134,20 @@ ul > li {
 
 .material-symbols-outlined {
   vertical-align: bottom;
-  font-size: 24px !important;
+  font-size: 24px;
 }
 
+.help-line{
+font-size: 1.5rem;
+font-weight: 500;
+}
+.support{
+  font-size: 12px;
+}
 /* .main-menu-contents ul li a:hover{
   color: #3BB77E;
 } */
+
+.marg-b-7{
+  margin-bottom: 0.7rem;
+}
