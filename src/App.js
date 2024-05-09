@@ -4,7 +4,7 @@ import Header from './components/header/header';
 import 'material-icons/iconfont/material-icons.css';
 // import 'font-awesome/css/font-awesome.min.css';
 // import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from './pages/home';
 import ProductDetails from './pages/productDetail';
 import DashBoard from './pages/dashboard';
@@ -13,9 +13,9 @@ import Deals from './pages/deals';
 function App() {
   return (
     <>
-    <Header/>
-     {/* Defining routes path and rendering components as element */}
-     <Routes>
+      <Header />
+      {/* Defining routes path and rendering components as element */}
+      <Routes>
         <Route path="/" element={<DashBoard />} />
         <Route path="/home" element={<Home />} />
         <Route path="/deals" element={<Deals />} />

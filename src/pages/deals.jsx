@@ -1,8 +1,6 @@
-import React from 'react';
+import React from "react";
 
 const Deals = () => {
-    return (
-        <>Deals page</>
-    )
-}
+  return <>Deals page</>;
+};
 export default Deals;

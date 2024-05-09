@@ -1,0 +1,74 @@
+h1 {
+  color: red;
+}
+.card-product-image {
+  width: 100%;
+  height: auto;
+}
+.card {
+  border-top-left-radius: 20px !important;
+}
+.productCategory {
+  color: hsl(0, 84%, 43%);
+}
+.merchantHighlight {
+  color: #3bb77e;
+}
+.merchantHighlight:hover {
+  color: #fdc040;
+}
+.card-title:hover {
+  color: #3bb77e;
+}
+.discounted-price-strike {
+  font-size: 14px;
+  color: #adadad !important;
+  text-decoration: line-through;
+}
+.product-final-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3bb77e;
+}
+
+.cart-button {
+  background-color: #def9ec !important;
+}
+.cart-button:hover {
+  background-color: #3bb77e !important;
+}
+.card-cursor-pointer {
+  cursor: pointer;
+}
+
+/*starting header */
+
+.product-badges.product-badges-position {
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 9;
+}
+
+.product-badges.product-badges-mrg {
+  margin: 0 0 10px;
+}
+.product-badges {
+  display: flex;
+}
+
+.product-badges span.hot {
+  background-color: #f74b81;
+}
+
+.product-badges span {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 15px 0 20px 0;
+  color: #fff;
+  padding: 9px 20px 10px 20px;
+}
+.product-badges span:last-child {
+  margin-right: 0px;
+}
