@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.css";
 import Logo from "../../assets/images/logo.svg";
+import Header2 from "../header2/header2";
 const Header = () => {
   return (
     <>
@@ -24,12 +25,12 @@ const Header = () => {
               <a href="#"><span className="material-symbols-outlined">person_outline</span>Account</a>
             </div>
           </div>
-
-          <div className="header-section">
+          <Header2/>
+          {/* <div className="header-section">
             <div className="main-menu-contents">
-              <span className="button"><span className="material-symbols-outlined">
-                grid_view
-              </span> Trending Categories  <span className="material-symbols-outlined">
+              <span className="button">
+                <span className="material-symbols-outlined">grid_view</span> 
+                Trending Categories  <span className="material-symbols-outlined">
                   expand_more
                 </span></span>
               <ul className="d-flex">
@@ -69,7 +70,7 @@ const Header = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
 
 
         </div>

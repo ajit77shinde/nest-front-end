@@ -7,13 +7,17 @@ import Home from "./pages/home";
 import ProductDetails from "./pages/productDetail";
 import DashBoard from "./pages/dashboard/dashboard";
 import Deals from "./pages/deals";
-
+import Header2 from "./components/header2/header2";
+import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./../node_modules/bootstrap/dist/js/bootstrap.min.js";
 function App() {
   return (
     <>
       <Header />
       {/* Defining routes path and rendering components as element */}
       <Routes>
+        <Route path="/" element={<DashBoard />} />
+        {/* <Route path="/header" element={<Header2 />} /> */}
         <Route path="/" element={<DashBoard />} />
         <Route path="/home" element={<Home />} />
         <Route path="/deals" element={<Deals />} />

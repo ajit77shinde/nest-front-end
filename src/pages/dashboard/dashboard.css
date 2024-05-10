@@ -2,6 +2,18 @@
     height: 100vh;
     display: flex;
     justify-content:  space-between;
-    margin: 1rem;
+    margin: 2rem;
 
+}
+
+.shop-now{
+    background-image: url(https://nest-frontend-v6.netlify.app/assets/imgs/banner/banner-14.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20rem;
+}
+
+.card-cutom-width{
+    width: -webkit-fill-available;
+    margin: 0 2rem;
 }

@@ -4,7 +4,7 @@ import "./category.css";
 import { data } from "./category_data"
 export const Category = () => {
     return (
-        <div class="card-1" style={{ width: 15 + 'rem' }}>
+        <div class="card-1" style={{ width: 15 + 'rem',display: 'inline-table'}}>
             <div class="card-body categories-dropdown-wrap">
                 <ul>
                     {data.map((element) => {
