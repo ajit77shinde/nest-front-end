@@ -8,8 +8,11 @@ h1 {
 .card {
   border-top-left-radius: 20px !important;
 }
+.card-color:hover {
+  color: #3bb77e;
+}
 .productCategory {
-  color: hsl(0, 84%, 43%);
+  color: #cb1212;
 }
 .merchantHighlight {
   color: #3bb77e;
@@ -20,6 +23,7 @@ h1 {
 .card-title:hover {
   color: #3bb77e;
 }
+
 .discounted-price-strike {
   font-size: 14px;
   color: #adadad !important;
@@ -71,4 +75,52 @@ h1 {
 }
 .product-badges span:last-child {
   margin-right: 0px;
+}
+.star {
+  color: #ff9900;
+}
+
+.star {
+  font-size: 70%;
+}
+.starHalfFill {
+  font-size: 24px;
+  background: linear-gradiant(to right, and gold 50%, transparent 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* for review stars */
+
+.product-rate {
+  background-image: url(https://nest-frontend-v6.netlify.app/assets/imgs/theme/rating-stars.png);
+  background-position: 0 -12px;
+  background-repeat: repeat-x;
+  height: 12px;
+  width: 60px;
+  transition: all 0.5s ease-out 0s;
+  -webkit-transition: all 0.5s ease-out 0s;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.product-rating {
+  height: 12px;
+  background-repeat: repeat-x;
+  background-image: url(https://nest-frontend-v6.netlify.app/assets/imgs/theme/rating-stars.png);
+  background-position: 0 0;
+}
+
+.text-muted {
+  color: #b6b6b6 !important;
+}
+.colorChange {
+  color: #b6b6b6 !important;
+}
+.card-margin {
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
