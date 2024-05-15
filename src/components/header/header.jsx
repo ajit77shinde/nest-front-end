@@ -9,7 +9,7 @@ const Header = () => {
         <div className="containe-fluid">
           <div className="section-search header-section d-flex">
             <div className="col-sm-2">
-              <img src={Logo} alt="" />
+              <img id="logo" src={Logo} alt="" />
             </div>
             {/* =====================header start here ===================== */}
             <div className="header-search d-flex align-items-center">
@@ -71,7 +71,6 @@ const Header = () => {
               </div>
             </div>
           </div> */}
-
 
         </div>
       </header>

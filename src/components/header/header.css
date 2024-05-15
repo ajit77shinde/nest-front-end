@@ -64,7 +64,7 @@ header .header-search {
 } 
 */
 
-img {
+#logo {
   height: 3rem;
 }
 
@@ -97,12 +97,11 @@ ul > li {
   align-items: center;
   justify-content: space-between;
   padding: 0 1%;
-  background-color: #3BB77E !important;
+  background-color: #3bb77e !important;
   color: white;
-
 }
 .button {
-  background-color: #FDC040; /* Green */
+  background-color: #fdc040; /* Green */
   border: none;
   color: white;
   padding: 12px 26px;
@@ -122,7 +121,7 @@ ul > li {
   padding: 6px 18px;
 }
 
-.main-menu-contents ul li a{
+.main-menu-contents ul li a {
   text-decoration: none;
   color: white;
   display: inline-block;
