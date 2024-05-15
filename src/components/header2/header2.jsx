@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { data } from "../category/category_data";
+import './header2.css'
 const Header2 = () => {
     return (
         <>
-            <nav class="navbar navbar-expand-lg navbar-light bg-success">
+            <nav class="navbar navbar-expand-lg navbar-light app-greeen">
                 <div class="container-fluid">
                     {/* <a class="navbar-brand" href="#">Trending Categories</a> */}
 
                     <div class="dropdown">
-                        <button style={{backgroundColor: "orange"}} class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button style={{ backgroundColor: "orange" }} class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <span className="material-symbols-outlined">grid_view</span>
                             Trending Categories
                         </button>
@@ -28,7 +29,9 @@ const Header2 = () => {
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav m-auto">
                             <li class="nav-item">
-                                <a class="nav-link active text-light" aria-current="page" href="#">Deals</a>
+                                <a class="nav-link active text-light" aria-current="page" href="#"><span className="material-symbols-outlined">
+                                    local_fire_department
+                                </span> Deals</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

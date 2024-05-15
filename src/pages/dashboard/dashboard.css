@@ -13,6 +13,12 @@
     height: 20rem;
 }
 
+.organic-prod{
+    background-image: url(https://nest-frontend-v6.netlify.app/assets/imgs/banner/banner-15.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20rem;
+}
 .card-cutom-width{
     width: -webkit-fill-available;
     margin: 0 2rem;

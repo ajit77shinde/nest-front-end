@@ -1,3 +1,17 @@
-.btn-org{
-    background-color: #FDC040;
+.btn-org {
+  background-color: #fdc040;
+}
+
+
+.navbar-nav > li > a {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #253D4E;
+    font-family: "Quicksand", sans-serif;
+}
+
+.app-greeen{
+    background: #3BB77E !important;
+    color: white;
 }
