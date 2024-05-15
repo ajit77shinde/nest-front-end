@@ -9,18 +9,20 @@ import { ProductData } from "../../components/card/cardData";
 function DashBoard() {
     return (
         <>
-            <div className="section-1">
-
-                <div className="dashboard">
-                    <Category />
-                    <div>
-                        <div className="card card-cutom-width" style={{ width: 55 + 'rem' }}>
-                            <Slider />
-                        </div>
+            <section className="m-4">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                    <div class="col col-sm-6 col-md-2">
+                        {/* <div class="card"> */}
+                        <Category />
+                        {/* </div> */}
                     </div>
-
-                    <div>
-                        <div className="card ml-3 mb-3  shop-now" style={{ width: 24 + 'rem', height: 20 + 'rem' }}>
+                    <div class="col col-sm-12 col-md-7">
+                        {/* <div class="card"> */}
+                        <Slider />
+                        {/* </div> */}
+                    </div>
+                    <div class="col col-sm-6 col-md-3">
+                        <div className="card ml-3 mb-3  shop-now" style={{ height: 20 + 'rem' }}>
                             {/* <img className="card-img-top" src="..." alt="Card image cap"></img> */}
                             <div className="card-body">
                                 <h5 className="card-title">Everyday Fresh & Clean with Our Products</h5>
@@ -30,7 +32,7 @@ function DashBoard() {
                                 </span></a>
                             </div>
                         </div>
-                        <div className="card ml-3 mb-3 organic-prod" style={{ width: 24 + 'rem', height: 20 + 'rem' }}>
+                        <div className="card ml-3 mb-3 organic-prod" style={{ height: 20 + 'rem' }}>
                             {/* <img className="card-img-top" src="..." alt="Card image cap"></img> */}
                             <div className="card-body">
                                 <h5 className="card-title">Everyday Fresh & Clean with Our Products</h5>
@@ -42,8 +44,7 @@ function DashBoard() {
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </section>
             <section class="product-tabs section-padding position-relative">
                 <h3 id="popular-heading">Popular Products</h3>
                 <div class="container">
