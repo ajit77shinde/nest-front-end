@@ -4,7 +4,7 @@ import Header from "./components/header/header";
 import "material-icons/iconfont/material-icons.css";
 import { Link, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
-import ProductDetails from "./pages/productDetail";
+import ProductDetails from "./pages/productDetails/productDetail.jsx";
 import DashBoard from "./pages/dashboard/dashboard";
 import Deals from "./pages/deals";
 import Header2 from "./components/header2/header2";

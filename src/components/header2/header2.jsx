@@ -10,15 +10,19 @@ const Header2 = () => {
 
                     <div class="dropdown">
                         <button style={{ backgroundColor: "orange" }} class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span className="material-symbols-outlined">grid_view</span>
+                            <span className="mr-2 material-symbols-outlined">grid_view</span>
                             Trending Categories
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            {data.map(element => {
-                                return (<li><a class="dropdown-item" href={element.path}>
-                                    <img src={element.url} alt="" />
-                                    element.category_name</a></li>)
-                            })}
+                        <ul class="mt-2 dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <div className="m-3 mb-1 row row-cols-md-2">
+                                {data.map(element => {
+                                    return (<div class="col col-md-6">
+                                        <li className="cat-border mb-3 d-grid"><a class="d-inline dropdown-item category-items" href={element.path}>
+                                            <img src={element.url} alt="" />
+                                            {element.category_name}</a></li>
+                                    </div>)
+                                })}
+                            </div>
                         </ul>
                     </div>
                     <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"

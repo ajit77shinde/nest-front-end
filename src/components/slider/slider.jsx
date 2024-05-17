@@ -14,8 +14,8 @@ const Slider = () => {
                     <div class="carousel-item active">
                         <img src={img1} class="d-block w-100 h-50" alt="" />
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            <h5>Dont miss amezing grocery deals</h5>
+                            <p>Sign up for the daily newsletter</p>
                         </div>
                     </div>
                     <div class="carousel-item">

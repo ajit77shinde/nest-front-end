@@ -10,54 +10,38 @@ import { ProductData } from "../../components/card/cardData";
 function DashBoard() {
   return (
     <>
-      <div className="section-1">
-        <div className="dashboard">
-          <Category />
-          <div>
-            <div
-              className="card card-cutom-width"
-              style={{ width: 55 + "rem" }}
-            >
-              <Slider />
-            </div>
+      <section className="mt-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+          <div class="col col-sm-6 col-md-2 d-inline-table">
+            <Category />
           </div>
-
-          <div>
-            <div
-              className="card ml-3 mb-3  shop-now"
-              style={{ width: 24 + "rem", height: 20 + "rem" }}
-            >
+          <div class="col col-sm-12 col-md-7">
+            <Slider />
+          </div>
+          <div class="col col-sm-6 col-md-3">
+            <div className="card ml-3 mb-3  shop-now" style={{ height: 20 + 'rem' }}>
               {/* <img className="card-img-top" src="..." alt="Card image cap"></img> */}
               <div className="card-body">
-                <h5 className="card-title">
-                  Everyday Fresh & Clean with Our Products
-                </h5>
+                <h5 className="card-title">Everyday Fresh & Clean with Our Products</h5>
                 {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                <a href="#" className="btn btn-success">
-                  Shop Now{" "}
-                  <span class="material-symbols-outlined">arrow_forward</span>
-                </a>
+                <a href="#" className="btn btn-success">Shop Now <span class="material-symbols-outlined">
+                  arrow_forward
+                </span></a>
               </div>
             </div>
-            <div
-              className="card ml-3 mb-3 organic-prod"
-              style={{ width: 24 + "rem", height: 20 + "rem" }}
-            >
+            <div className="card ml-3 mb-3 organic-prod" style={{ height: 20 + 'rem' }}>
               {/* <img className="card-img-top" src="..." alt="Card image cap"></img> */}
               <div className="card-body">
-                <h5 className="card-title">
-                  Everyday Fresh & Clean with Our Products
-                </h5>
+                <h5 className="card-title">Everyday Fresh & Clean with Our Products</h5>
                 {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                <a href="#" className="btn btn-success">
-                  Shop Now{" "}
-                  <span class="material-symbols-outlined">arrow_forward</span>
-                </a>
+                <a href="#" className="btn btn-success">Shop Now <span class="material-symbols-outlined">
+                  arrow_forward
+                </span></a>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <section class="product-tabs section-padding position-relative">
         <h3 id="popular-heading">Popular Products</h3>
@@ -165,7 +149,7 @@ function DashBoard() {
                 </div>
               </div>
             </div>
-            {/* {ProductData.map((data) => {
+            {ProductData.map((data) => {
               return (
                 <div class="col-lg-1-3 col-md-3  col-sm-2 col-12">
                   <Card
@@ -182,7 +166,7 @@ function DashBoard() {
                   />
                 </div>
               );
-            })} */}
+            })}
           </div>
         </div>
       </section>
@@ -403,7 +387,7 @@ function DashBoard() {
             <div
               class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-lg-block wow animate__ animate__fadeInUp animated"
               data-wow-delay=".2s"
-              // style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
+            // style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
             >
               <h4 class="section-title style-1 mb-30 animated animated">
                 Recently added
@@ -504,7 +488,7 @@ function DashBoard() {
             <div
               class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-xl-block wow animate__ animate__fadeInUp animated"
               data-wow-delay=".3s"
-              // style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
+            // style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
             >
               <h4 class="section-title style-1 mb-30 animated animated">
                 Top Rated
