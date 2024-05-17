@@ -11,7 +11,8 @@ export const Category = () => {
                         return (
                             <li>
                                 <a href={element.path}>
-                                    <img src={element.url} alt="" />{element.category_name}</a>
+                                    <img src={element.url} alt="" />{element.category_name} </a>
+                                    
                             </li>
                         )
                     })}

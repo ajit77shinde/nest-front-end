@@ -17,7 +17,7 @@ const Header2 = () => {
                             <div className="m-3 mb-1 row row-cols-md-2">
                                 {data.map(element => {
                                     return (<div class="col col-md-6">
-                                        <li className="mb-3 d-grid"><a class="d-inline dropdown-item category-items" href={element.path}>
+                                        <li className="cat-border mb-3 d-grid"><a class="d-inline dropdown-item category-items" href={element.path}>
                                             <img src={element.url} alt="" />
                                             {element.category_name}</a></li>
                                     </div>)
