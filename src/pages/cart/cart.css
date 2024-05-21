@@ -31,11 +31,8 @@ h1 {
 #text-brand {
   color: #3bb77e !important;
 }
-#text-body {
-  color: #7e7e7e !important;
-}
-.text-body {
-  /* --bs-text-opacity: 1; */
+.text-body-new {
+  --bs-text-opacity: 1;
   color: #7e7e7e !important;
 }
 .text-muted {

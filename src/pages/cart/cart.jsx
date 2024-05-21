@@ -20,10 +20,10 @@ const Cart = () => {
             <div class="col-lg-8 mb-40">
               <h1 class="heading-2 mb-10">Your Cart</h1>
               <div class="d-flex justify-content-between">
-                <h6 id="text-body">
+                <h6 class="text-body-new">
                   There are <span id="text-brand">3</span> products in your cart
                 </h6>
-                <h6 id="text-body">
+                <h6 class="text-body-new">
                   <a href="#" class="text-muted">
                     <span class="material-symbols-outlined icon-delete">
                       delete
@@ -107,7 +107,7 @@ const Cart = () => {
                         </div>
                       </td>
                       <td class="price" data-title="Price">
-                        <h4 class="text-body ">$2.51 </h4>
+                        <h4 class="text-body-new ">$2.51 </h4>
                       </td>
                       <td class="text-center detail-info" data-title="Stock">
                         <div class="detail-extralink mr-15">
@@ -138,7 +138,7 @@ const Cart = () => {
                         <h4 class="text-brand ">$2.51 </h4>
                       </td>
                       <td class="action text-center" data-title="Remove">
-                        <a href="#" class="text-body">
+                        <a href="#" class="text-body-new">
                           <span class="material-symbols-outlined icon-delete ">
                             delete
                           </span>
@@ -186,7 +186,7 @@ const Cart = () => {
                         </div>
                       </td>
                       <td class="price" data-title="Price">
-                        <h4 class="text-body">$3.2 </h4>
+                        <h4 class="text-body-new">$3.2 </h4>
                       </td>
                       <td class="text-center detail-info" data-title="Stock">
                         <div class="detail-extralink mr-15">
@@ -215,7 +215,7 @@ const Cart = () => {
                         <h4 class="text-brand">$3.2 </h4>
                       </td>
                       <td class="action text-center" data-title="Remove">
-                        <a href="#" class="text-body">
+                        <a href="#" class="text-body-new">
                           <span class="material-symbols-outlined icon-delete ">
                             delete
                           </span>{" "}
@@ -263,7 +263,7 @@ const Cart = () => {
                         </div>
                       </td>
                       <td class="price" data-title="Price">
-                        <h4 class="text-body">$2.43 </h4>
+                        <h4 class="text-body-new">$2.43 </h4>
                       </td>
                       <td class="text-center detail-info" data-title="Stock">
                         <div class="detail-extralink mr-15">
@@ -292,7 +292,7 @@ const Cart = () => {
                         <h4 class="text-brand">$2.43 </h4>
                       </td>
                       <td class="action text-center" data-title="Remove">
-                        <a href="#" class="text-body">
+                        <a href="#" class="text-body-new">
                           <span class="material-symbols-outlined icon-delete ">
                             delete
                           </span>
