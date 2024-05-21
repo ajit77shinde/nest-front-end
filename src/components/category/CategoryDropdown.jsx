@@ -5,7 +5,9 @@ const CategoryDropdown = (props) => {
     return (
         <>
             <div className="m-2 mb-1 category-border">
-
+            <h4 class="section-title style-1 mb-30 animated animated">
+                Category
+              </h4>
                 {props.data.map(element => {
                     return (
 
