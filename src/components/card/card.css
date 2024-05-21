@@ -40,6 +40,7 @@ h1 {
 }
 .cart-button:hover {
   background-color: #3bb77e !important;
+  color: #ffffff !important;
 }
 .card-cursor-pointer {
   cursor: pointer;
@@ -126,7 +127,7 @@ h1 {
 }
 /* =============================================================================*/
 
-.card-border{
+.card-border {
   padding: 1rem;
   border: 1px solid #f2f3f4;
   border-radius: 15px;

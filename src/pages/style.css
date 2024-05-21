@@ -316,7 +316,7 @@ p {
   border-radius: 150px;
   font-weight: bold;
 }
-input {
+.form-subcriber input {
   border: 1px solid #ececec;
   border-radius: 10px;
   height: 64px;

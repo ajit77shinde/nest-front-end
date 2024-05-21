@@ -4,6 +4,8 @@ import "../style.css";
 import { Category } from "../../components/category/category";
 import Slider from "../../components/slider/slider";
 import Card from "../../components/card/card";
+import Newsletter from "../../components/newletter/newsletter";
+import Featured from "../../components/featured/featured";
 // import selling from "../../components/bestSells/sellingItems";
 import { ProductData } from "../../components/card/cardData";
 
@@ -19,24 +21,36 @@ function DashBoard() {
             <Slider />
           </div>
           <div class="col col-sm-6 col-md-3">
-            <div className="card ml-3 mb-3  shop-now" style={{ height: 20 + 'rem' }}>
+            <div
+              className="card ml-3 mb-3  shop-now"
+              style={{ height: 20 + "rem" }}
+            >
               {/* <img className="card-img-top" src="..." alt="Card image cap"></img> */}
               <div className="card-body">
-                <h5 className="card-title">Everyday Fresh & Clean with Our Products</h5>
+                <h5 className="card-title">
+                  Everyday Fresh & Clean with Our Products
+                </h5>
                 {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                <a href="#" className="btn btn-success">Shop Now <span class="material-symbols-outlined">
-                  arrow_forward
-                </span></a>
+                <a href="#" className="btn btn-success">
+                  Shop Now{" "}
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
               </div>
             </div>
-            <div className="card ml-3 mb-3 organic-prod" style={{ height: 20 + 'rem' }}>
+            <div
+              className="card ml-3 mb-3 organic-prod"
+              style={{ height: 20 + "rem" }}
+            >
               {/* <img className="card-img-top" src="..." alt="Card image cap"></img> */}
               <div className="card-body">
-                <h5 className="card-title">Everyday Fresh & Clean with Our Products</h5>
+                <h5 className="card-title">
+                  Everyday Fresh & Clean with Our Products
+                </h5>
                 {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                <a href="#" className="btn btn-success">Shop Now <span class="material-symbols-outlined">
-                  arrow_forward
-                </span></a>
+                <a href="#" className="btn btn-success">
+                  Shop Now{" "}
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
               </div>
             </div>
           </div>
@@ -93,6 +107,7 @@ function DashBoard() {
                 >
                   Featured
                 </button>
+                red
               </li>
               <li class="nav-item" role="presentation">
                 <button
@@ -387,7 +402,7 @@ function DashBoard() {
             <div
               class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-lg-block wow animate__ animate__fadeInUp animated"
               data-wow-delay=".2s"
-            // style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
+              // style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
             >
               <h4 class="section-title style-1 mb-30 animated animated">
                 Recently added
@@ -488,7 +503,7 @@ function DashBoard() {
             <div
               class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-xl-block wow animate__ animate__fadeInUp animated"
               data-wow-delay=".3s"
-            // style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
+              // style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
             >
               <h4 class="section-title style-1 mb-30 animated animated">
                 Top Rated
@@ -589,7 +604,6 @@ function DashBoard() {
           </div>
         </div>
       </section>
-
 
     </>
   );

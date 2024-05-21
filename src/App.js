@@ -5,6 +5,7 @@ import "material-icons/iconfont/material-icons.css";
 import { Link, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import ProductDetails from "./pages/productDetails/productDetail.jsx";
+import Cart from "./pages/cart/cart.jsx";
 import DashBoard from "./pages/dashboard/dashboard";
 import Deals from "./pages/deals";
 // import Header2 from "./components/header2/header2";
@@ -22,7 +23,8 @@ function App() {
         <Route path="/" element={<DashBoard />} />
         <Route path="/home" element={<Home />} />
         <Route path="/deals" element={<Deals />} />
-        <Route path="/productDetails" element={<ProductDetails />} />
+        <Route path="/product-details" element={<ProductDetails />} />
+        <Route path="/cart" element={<Cart />} />
         {/* <Route path="/live" element={<Live />} /> */}
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
