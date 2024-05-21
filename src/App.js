@@ -10,7 +10,7 @@ import Deals from "./pages/deals";
 // import Header2 from "./components/header2/header2";
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./../node_modules/bootstrap/dist/js/bootstrap.min.js";
-import Footer1 from "./components/footer/footer.jsx";
+import Footer from "./components/footer/footer.jsx";
 function App() {
   return (
     <>
@@ -26,7 +26,7 @@ function App() {
         {/* <Route path="/live" element={<Live />} /> */}
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
-      <Footer1 />
+      <Footer />
     </>
   );
 }
