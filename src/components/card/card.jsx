@@ -75,7 +75,7 @@ const Card = (props) => {
               </h6>
             </div>
             <div class="col-lg-5 col-md-5">
-              <a href="/productDetails" class="btn float-end cart-button">
+              <a href="./cart" class="btn float-end cart-button">
                 <span class="material-symbols-outlined">shopping_cart</span>
                 {buttonText}
               </a>

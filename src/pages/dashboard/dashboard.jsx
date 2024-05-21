@@ -4,6 +4,8 @@ import "../style.css";
 import { Category } from "../../components/category/category";
 import Slider from "../../components/slider/slider";
 import Card from "../../components/card/card";
+import Newsletter from "../../components/newletter/newsletter";
+import Featured from "../../components/featured/featured";
 // import selling from "../../components/bestSells/sellingItems";
 import { ProductData } from "../../components/card/cardData";
 
@@ -19,24 +21,36 @@ function DashBoard() {
             <Slider />
           </div>
           <div class="col col-sm-6 col-md-3">
-            <div className="card ml-3 mb-3  shop-now" style={{ height: 20 + 'rem' }}>
+            <div
+              className="card ml-3 mb-3  shop-now"
+              style={{ height: 20 + "rem" }}
+            >
               {/* <img className="card-img-top" src="..." alt="Card image cap"></img> */}
               <div className="card-body">
-                <h5 className="card-title">Everyday Fresh & Clean with Our Products</h5>
+                <h5 className="card-title">
+                  Everyday Fresh & Clean with Our Products
+                </h5>
                 {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                <a href="#" className="btn btn-success">Shop Now <span class="material-symbols-outlined">
-                  arrow_forward
-                </span></a>
+                <a href="#" className="btn btn-success">
+                  Shop Now{" "}
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
               </div>
             </div>
-            <div className="card ml-3 mb-3 organic-prod" style={{ height: 20 + 'rem' }}>
+            <div
+              className="card ml-3 mb-3 organic-prod"
+              style={{ height: 20 + "rem" }}
+            >
               {/* <img className="card-img-top" src="..." alt="Card image cap"></img> */}
               <div className="card-body">
-                <h5 className="card-title">Everyday Fresh & Clean with Our Products</h5>
+                <h5 className="card-title">
+                  Everyday Fresh & Clean with Our Products
+                </h5>
                 {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                <a href="#" className="btn btn-success">Shop Now <span class="material-symbols-outlined">
-                  arrow_forward
-                </span></a>
+                <a href="#" className="btn btn-success">
+                  Shop Now{" "}
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
               </div>
             </div>
           </div>
@@ -93,6 +107,7 @@ function DashBoard() {
                 >
                   Featured
                 </button>
+                red
               </li>
               <li class="nav-item" role="presentation">
                 <button
@@ -387,7 +402,7 @@ function DashBoard() {
             <div
               class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-lg-block wow animate__ animate__fadeInUp animated"
               data-wow-delay=".2s"
-            // style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
+              // style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
             >
               <h4 class="section-title style-1 mb-30 animated animated">
                 Recently added
@@ -488,7 +503,7 @@ function DashBoard() {
             <div
               class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-xl-block wow animate__ animate__fadeInUp animated"
               data-wow-delay=".3s"
-            // style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
+              // style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
             >
               <h4 class="section-title style-1 mb-30 animated animated">
                 Top Rated
@@ -590,177 +605,11 @@ function DashBoard() {
         </div>
       </section>
 
-      {/* long container */}
-      <section
-        class="newsletter mb-15 wow animate__ animate__fadeIn animated"
-        style={{ visibility: "visible", animationName: "fadeIn" }}
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="position-relative newsletter-inner">
-                <div class="newsletter-content">
-                  <h2 class="mb-20">
-                    Stay home &amp; get your daily <br />
-                    needs from our shop
-                  </h2>
-                  <p class="mb-45">
-                    Start You'r Daily Shopping with{" "}
-                    <span class="text-brand">Nest Mart</span>
-                  </p>
-                  <form class="form-subcriber d-flex">
-                    <input type="email" placeholder="Your emaill address" />
-                    <button class="bttn " type="submit">
-                      Subscribe
-                    </button>
-                  </form>
-                </div>
-                <img
-                  src="	https://nest-frontend-v6.netlify.app/assets/imgs/banner/banner-9.png"
-                  alt="newsletter"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* newsletter */}
+      <Newsletter />
 
-      {/*small container*/}
-
-      <section class="featured section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
-              <div
-                class="banner-left-icon d-flex align-items-center wow animate__ animate__fadeInUp animated"
-                data-wow-delay="0"
-                style={{ visibility: "visible", animationName: "fadeInUp" }}
-              >
-                <div class="banner-icon">
-                  <img
-                    src="	https://nest-frontend-v6.netlify.app/assets/imgs/theme/icons/icon-1.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="banner-text">
-                  <h3 class="icon-box-title">Best prices &amp; offers</h3>
-                  <p>Orders $50 or more</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-              <div
-                class="banner-left-icon d-flex align-items-center wow animate__ animate__fadeInUp animated"
-                data-wow-delay=".1s"
-                style={{
-                  visibility: "visibl",
-                  animationDelay: "0.1s",
-                  animationName: "fadeInUp",
-                }}
-              >
-                <div class="banner-icon">
-                  <img
-                    src="	https://nest-frontend-v6.netlify.app/assets/imgs/theme/icons/icon-2.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="banner-text">
-                  <h3 class="icon-box-title">Free delivery</h3>
-                  <p>24/7 amazing services</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-              <div
-                class="banner-left-icon d-flex align-items-center wow animate__ animate__fadeInUp animated"
-                data-wow-delay=".2s"
-                style={{
-                  visibility: "visibl",
-                  animationDelay: "0.2s",
-                  animationName: "fadeInUp",
-                }}
-              >
-                <div class="banner-icon">
-                  <img
-                    src="https://nest-frontend-v6.netlify.app/assets/imgs/theme/icons/icon-3.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="banner-text">
-                  <h3 class="icon-box-title">Great daily deal</h3>
-                  <p>When you sign up</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-              <div
-                class="banner-left-icon d-flex align-items-center wow animate__ animate__fadeInUp animated"
-                data-wow-delay=".3s"
-                style={{
-                  visibility: "visibl",
-                  animationDelay: "0.3s",
-                  animationName: "fadeInUp",
-                }}
-              >
-                <div class="banner-icon">
-                  <img
-                    src="https://nest-frontend-v6.netlify.app/assets/imgs/theme/icons/icon-4.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="banner-text">
-                  <h3 class="icon-box-title">Wide assortment</h3>
-                  <p>Mega Discounts</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-              <div
-                class="banner-left-icon d-flex align-items-center wow animate__ animate__fadeInUp animated"
-                data-wow-delay=".4s"
-                style={{
-                  visibility: "visibl",
-                  animationDelay: "0.4s",
-                  animationName: "fadeInUp",
-                }}
-              >
-                <div class="banner-icon">
-                  <img
-                    src="https://nest-frontend-v6.netlify.app/assets/imgs/theme/icons/icon-5.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="banner-text">
-                  <h3 class="icon-box-title">Easy returns</h3>
-                  <p>Within 30 days</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
-              <div
-                class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
-                data-wow-delay=".5s"
-                style={{
-                  visibility: "visibl",
-                  animationDelay: "0.5s",
-                  animationName: "fadeInUp",
-                }}
-              >
-                <div class="banner-icon">
-                  <img
-                    src="https://nest-frontend-v6.netlify.app/assets/imgs/theme/icons/icon-6.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="banner-text">
-                  <h3 class="icon-box-title">Safe delivery</h3>
-                  <p>Within 30 days</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/*featured*/}
+      <Featured />
     </>
   );
 }
