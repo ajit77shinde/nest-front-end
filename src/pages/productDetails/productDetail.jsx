@@ -1,14 +1,31 @@
 import React from "react";
-import { Category } from "../../components/category/category";
-import CategoryDropdown from "../../components/category/CategoryDropdown";
+// import { Category } from "../../components/category/category";
+// import CategoryDropdown from "../../components/category/CategoryDropdown";
 import { data } from "../../components/category/category_data";
 import "./productDetail.css";
 import { Rating } from "@mui/material";
 import CardList from "../../components/card/cardList";
+import InnerImageZoom from 'react-inner-image-zoom';
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
+import CartTitle from "../../components/card/cardTitle";
+import { ProductData } from "../../components/card/cardData";
+import Card from "../../components/card/card";
+import Slider from "react-slick";
+
+
 const ProductDetails = () => {
     const arrowSign = <span class="material-symbols-outlined">chevron_right</span>
     const homeSign = <span class="material-symbols-outlined">home</span>
     const value = 3.5;
+
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
+
     return (
         <>
             <div className="my-3 mx-5">
@@ -29,10 +46,30 @@ const ProductDetails = () => {
                 <hr />
                 <section className="my-3">
                     <div className="row row-cols-md-2">
-                        <div className="col-md-9 row">
-                            <div className="col-md-6">product Image </div>
+                        {/* Product Image section */}
+                        <div className="col-md-9 row ">
+                            <div className="col-md-6">
+                                <div className="zoom-image">
+                                    <InnerImageZoom zoomType="hover" src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-1.jpg" />
+                                </div>
+                            </div>
+                            <Slider {...settings}>
+                                <div className="item">
+                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" alt="" />
+                                </div>
+                                <div className="item">
+                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" alt="" />
+                                </div>
+                                <div className="item">
+                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" alt="" />
+                                </div>
+                                <div className="item">
+                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" alt="" />
+                                </div>
 
-                            <div className="col-md-6 pl-3 pr-3">
+                            </Slider>
+
+                            <div className="col-md-6 product-details">
                                 <span className="stock-status out-stock">sale Off</span>
                                 <div className="title-detail">Seeds of Change Organic Quinoa, Brown</div>
                                 <div className="product-detail-rating">
@@ -101,6 +138,27 @@ const ProductDetails = () => {
                                     </div>
                                 </div> */}
                             </div>
+
+                            <CartTitle title="Related products" />
+                            {ProductData.map((data) => {
+                                return (
+                                    <div class="col-lg-1-3 col-md-3  col-sm-6 col-12">
+                                        <Card
+                                            productImagePath={data.product_image_url}
+                                            // producttitle={data.product_name}
+                                            productRating={data.productRating}
+                                            productPrice={data.product_price}
+                                            productFinalPrice={data.product_discounted_price}
+                                            hideButton ={true}
+                                            // reviewPercentage={data.reviewPercentage}
+                                            productCategory={data.product_category}
+                                            // productMerchant={data.product_tag}
+                                            // buttonText={data.buttonText}
+                                            badgeData={data.product_discount_percent}
+                                        />
+                                    </div>
+                                );
+                            })}
                         </div>
 
                         <div className="col-md-3">
@@ -118,7 +176,7 @@ const ProductDetails = () => {
                                     )
                                 } else return ("")
                             })}</CardList>
-                            <CardList title="Fill By Price">
+                            <CardList title="New products">
                                 <div class="product-list-small animated animated">
                                     <article class="row align-items-center hover-up">
                                         <figure class="col-md-4 mb-0">
@@ -213,7 +271,7 @@ const ProductDetails = () => {
                                 </div>
                             </CardList>
 
-                            
+
                         </div>
                     </div>
                 </section>

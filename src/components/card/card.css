@@ -4,9 +4,10 @@ h1 {
 .card-product-image {
   width: 100%;
   height: auto;
+  border-radius: 15px !important;
 }
 .card {
-  border-top-left-radius: 20px !important;
+  border-radius: 15px !important;
 }
 .card-color:hover {
   color: #3bb77e;
@@ -70,7 +71,7 @@ h1 {
   display: inline-block;
   font-size: 12px;
   line-height: 1;
-  border-radius: 15px 0 20px 0;
+  border-radius: 15px 0 15px 0;
   color: #fff;
   padding: 9px 20px 10px 20px;
 }
