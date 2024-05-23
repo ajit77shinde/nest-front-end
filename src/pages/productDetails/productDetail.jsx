@@ -19,11 +19,12 @@ const ProductDetails = () => {
     const value = 3.5;
 
     var settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        Fade: false
       };
 
     return (
@@ -52,22 +53,23 @@ const ProductDetails = () => {
                                 <div className="zoom-image">
                                     <InnerImageZoom zoomType="hover" src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-1.jpg" />
                                 </div>
-                            </div>
-                            <Slider {...settings}>
+                                <Slider {...settings} className="zoomSlider">
                                 <div className="item">
-                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" alt="" />
+                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
                                 </div>
                                 <div className="item">
-                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" alt="" />
+                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
                                 </div>
                                 <div className="item">
-                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" alt="" />
+                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
                                 </div>
                                 <div className="item">
-                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" alt="" />
+                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
                                 </div>
 
                             </Slider>
+                            </div>
+                           
 
                             <div className="col-md-6 product-details">
                                 <span className="stock-status out-stock">sale Off</span>
