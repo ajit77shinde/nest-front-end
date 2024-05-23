@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import { Category } from "../../components/category/category";
 // import CategoryDropdown from "../../components/category/CategoryDropdown";
 import { data } from "../../components/category/category_data";
@@ -17,6 +17,19 @@ const ProductDetails = () => {
     const arrowSign = <span class="material-symbols-outlined">chevron_right</span>
     const homeSign = <span class="material-symbols-outlined">home</span>
     const value = 3.5;
+    const [currentProduct, setCurrentProduct] = useState({})
+
+
+    var settings2 = {
+        dots: false,
+        infinite: false,
+        speed: 700,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: false,
+        arrows: false,
+    };
+
 
     var settings = {
         dots: false,
@@ -24,9 +37,13 @@ const ProductDetails = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        Fade: false
-      };
+        fade: false,
+        // arrows: true
+    };
 
+    useEffect(() => {
+        setCurrentProduct({ productImages: [{}, {}, {}] })
+    })
     return (
         <>
             <div className="my-3 mx-5">
@@ -50,26 +67,49 @@ const ProductDetails = () => {
                         {/* Product Image section */}
                         <div className="col-md-9 row ">
                             <div className="col-md-6">
-                                <div className="zoom-image">
-                                    <InnerImageZoom zoomType="hover" src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-1.jpg" />
-                                </div>
-                                <Slider {...settings} className="zoomSlider">
-                                <div className="item">
-                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                </div>
-                                <div className="item">
-                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                </div>
-                                <div className="item">
-                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                </div>
-                                <div className="item">
-                                    <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                </div>
+                                <div className='productZoom'>
+                                    <Slider {...settings2} className='zoomSliderBig'>
+                                        {
+                                            currentProduct.productImages !== undefined &&
+                                            currentProduct.productImages.map((imgUrl, index) => {
+                                                return (
+                                                    <div className='item'>
+                                                        <InnerImageZoom zoomType="hover" src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-1.jpg" />
 
-                            </Slider>
+
+                                                    </div>
+                                                )
+                                            })
+                                        }
+
+                                    </Slider>
+                                </div>
+                                {/* <div className="zoom-image">
+                                    <InnerImageZoom zoomType="hover" src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-1.jpg" />
+                                </div> */}
+                                <Slider {...settings} className="zoomSlider">
+                                    <div className="item">
+                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
+                                    </div>
+                                    <div className="item">
+                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
+                                    </div>
+                                    <div className="item">
+                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
+                                    </div>
+                                    <div className="item">
+                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
+                                    </div>
+                                    <div className="item">
+                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
+                                    </div>
+                                    <div className="item">
+                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
+                                    </div>
+
+                                </Slider>
                             </div>
-                           
+
 
                             <div className="col-md-6 product-details">
                                 <span className="stock-status out-stock">sale Off</span>
@@ -151,7 +191,7 @@ const ProductDetails = () => {
                                             productRating={data.productRating}
                                             productPrice={data.product_price}
                                             productFinalPrice={data.product_discounted_price}
-                                            hideButton ={true}
+                                            hideButton={true}
                                             // reviewPercentage={data.reviewPercentage}
                                             productCategory={data.product_category}
                                             // productMerchant={data.product_tag}
