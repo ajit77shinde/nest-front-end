@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // import { Category } from "../../components/category/category";
 // import CategoryDropdown from "../../components/category/CategoryDropdown";
 import { data } from "../../components/category/category_data";
@@ -11,14 +11,25 @@ import CartTitle from "../../components/card/cardTitle";
 import { ProductData } from "../../components/card/cardData";
 import Card from "../../components/card/card";
 import Slider from "react-slick";
+import { useParams } from "react-router-dom";
 
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
     const arrowSign = <span class="material-symbols-outlined">chevron_right</span>
     const homeSign = <span class="material-symbols-outlined">home</span>
     const value = 3.5;
-    const [currentProduct, setCurrentProduct] = useState({})
+    const [currentProduct, setCurrentProduct] = useState({});
+    let { id } = useParams();
+    const [prodCat, setProdCat] = useState({
+        parentCat: sessionStorage.getItem('parentCat'),
+        subCatName: sessionStorage.getItem('subCatName')
+    });
+    const [relatedProducts, setRelatedProducts] = useState([]);
+    const [bigImageSize, setBigImageSize] = useState([1500, 1500]);
+    const [smlImageSize, setSmlImageSize] = useState([150, 150]);
 
+    const zoomSliderBig = useRef();
+    const zoomSlider = useRef();
 
     var settings2 = {
         dots: false,
@@ -42,8 +53,73 @@ const ProductDetails = () => {
     };
 
     useEffect(() => {
-        setCurrentProduct({ productImages: [{}, {}, {}] })
-    })
+        window.scrollTo(0, 0)
+
+        props.data.length !== 0 &&
+            props.data.map((item) => {
+                item.items.length !== 0 &&
+                    item.items.map((item_) => {
+                        item_.products.length !== 0 &&
+                            item_.products.map((product) => {
+                                if (parseInt(product.id) === parseInt(id)) {
+                                    setCurrentProduct(product);
+                                }
+                            })
+                    })
+            })
+
+
+        //related products code
+
+        const related_products = [];
+
+        props.data.length !== 0 &&
+            props.data.map((item) => {
+                if (prodCat.parentCat === item.cat_name) {
+                    item.items.length !== 0 &&
+                        item.items.map((item_) => {
+                            if (prodCat.subCatName === item_.cat_name) {
+                                item_.products.length !== 0 &&
+                                    item_.products.map((product, index) => {
+                                        if (product.id !== parseInt(id)) {
+                                            related_products.push(product)
+                                        }
+                                    })
+                            }
+                        })
+                }
+            })
+        if (related_products.length !== 0) {
+            setRelatedProducts(related_products)
+        }
+        // showReviews();
+        // getCartData("http://localhost:5000/cartItems");
+    }, []);
+
+    // const showReviews = async () => {
+    //     try {
+    //         await axios.get("http://localhost:5000/productReviews").then((response) => {
+    //             if (response.data.length !== 0) {
+    //                 response.data.map((item) => {
+    //                     if (parseInt(item.productId) === parseInt(id)) {
+    //                         reviews_Arr2.push(item)
+    //                     }
+    //                 })
+    //             }
+    //         })
+    //     } catch (error) {
+    //         console.log(error.message);
+    //     }
+    //     if (reviews_Arr2.length !== 0) {
+    //         setReviewsArr(reviews_Arr2);
+    //     }
+    // }
+
+    const goto = (index) => {
+
+        zoomSlider.current.slickGoTo(index);
+        zoomSliderBig.current.slickGoTo(index);
+    }
     return (
         <>
             <div className="my-3 mx-5">
@@ -68,14 +144,15 @@ const ProductDetails = () => {
                         <div className="col-md-9 row ">
                             <div className="col-md-6">
                                 <div className='productZoom'>
-                                    <Slider {...settings2} className='zoomSliderBig'>
+                                    <Slider {...settings2} className='zoomSliderBig' ref={zoomSliderBig}>
                                         {
                                             currentProduct.productImages !== undefined &&
                                             currentProduct.productImages.map((imgUrl, index) => {
                                                 return (
                                                     <div className='item'>
-                                                        <InnerImageZoom zoomType="hover" src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-1.jpg" />
-
+                                                        <InnerImageZoom
+                                                            zoomType="hover" zoomScale={1}
+                                                            src={`${imgUrl}?im=Resize=(${bigImageSize[0]},${bigImageSize[1]})`} />
 
                                                     </div>
                                                 )
@@ -84,28 +161,22 @@ const ProductDetails = () => {
 
                                     </Slider>
                                 </div>
-                                {/* <div className="zoom-image">
-                                    <InnerImageZoom zoomType="hover" src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-1.jpg" />
-                                </div> */}
-                                <Slider {...settings} className="zoomSlider">
-                                    <div className="item">
-                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                    </div>
-                                    <div className="item">
-                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                    </div>
-                                    <div className="item">
-                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                    </div>
-                                    <div className="item">
-                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                    </div>
-                                    <div className="item">
-                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                    </div>
-                                    <div className="item">
-                                        <img src="https://nest-frontend-v6.netlify.app/assets/imgs/shop/product-16-6.jpg" className="w-100" alt="" />
-                                    </div>
+
+
+                                <Slider {...settings} className='zoomSlider' ref={zoomSlider}>
+
+                                    {
+                                        currentProduct.productImages !== undefined &&
+                                        currentProduct.productImages.map((imgUrl, index) => {
+                                            return (
+                                                <div className='item'>
+                                                    <img src={`${imgUrl}?im=Resize=(${smlImageSize[0]},${smlImageSize[1]})`} className='w-100'
+                                                        onClick={() => goto(index)} />
+                                                </div>
+                                            )
+                                        })
+                                    }
+
 
                                 </Slider>
                             </div>
@@ -146,7 +217,7 @@ const ProductDetails = () => {
                                     <div className="detail-qty radius ">
                                         <input type="number" name="quantity" class="qty-val" min="1" />
                                     </div>
-                                    <button type="button" class="btn btn-success lh-lg">
+                                    <button type="button" class="btn btn-success lh-base px-3">
                                         <span class="material-symbols-outlined">shopping_cart</span> Add to Cart</button>
 
                                     <button type="button" class="btn-extra"><span className="material-symbols-outlined">favorite_border</span></button>
