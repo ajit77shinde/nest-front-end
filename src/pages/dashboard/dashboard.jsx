@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./dashboard.css";
 import "../style.css";
 import { Category } from "../../components/category/category";
@@ -7,9 +7,27 @@ import Card from "../../components/card/card";
 import Newsletter from "../../components/newletter/newsletter";
 import Featured from "../../components/featured/featured";
 // import selling from "../../components/bestSells/sellingItems";
-import { ProductData } from "../../components/card/cardData";
+// import { ProductData } from "../../components/card/cardData";
+import axios from "axios";
 
 function DashBoard() {
+  const [product, setproduct] = useState([]);
+  console.log("This is category page");
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/product/")
+      .then((response) => {
+        setproduct(response.data);
+        console.log("below is the response from the api call"); // Log the fetched data
+        console.log(
+          `this is response data -- ${JSON.stringify(response.data)}`
+        ); // Log the fetched data
+        console.log(product);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  });
   return (
     <>
       <section className="mt-4">
@@ -62,20 +80,20 @@ function DashBoard() {
         <div class="container">
           {/* <div class="row"> */}
           <div class="row">
-            {ProductData.map((data) => {
+            {product.map((data) => {
               return (
                 <div class="col-lg-1-3 col-md-3  col-sm-6 col-12">
                   <Card
                     productCategory={data.product_category}
                     producttitle={data.product_name}
-                    productRating={data.productRating}
-                    reviewPercentage={data.reviewPercentage}
-                    productMerchant={data.product_tag}
-                    productFinalPrice={data.product_discounted_price}
-                    productPrice={data.product_price}
+                    productRating="4.0"
+                    reviewPercentage="90%"
+                    productMerchant={data.product_seller_name}
+                    productFinalPrice={data.product_price}
+                    productPrice={data.product_discount_percent}
                     buttonText={data.buttonText}
                     productImagePath={data.product_image_url}
-                    badgeData={data.product_discount_percent}
+                    badgeData={data.product_tag}
                   />
                 </div>
               );
@@ -107,7 +125,6 @@ function DashBoard() {
                 >
                   Featured
                 </button>
-                red
               </li>
               <li class="nav-item" role="presentation">
                 <button
@@ -164,20 +181,20 @@ function DashBoard() {
                 </div>
               </div>
             </div>
-            {ProductData.map((data) => {
+            {product.map((data) => {
               return (
                 <div class="col-lg-1-3 col-md-3  col-sm-2 col-12">
                   <Card
                     productCategory={data.product_category}
                     producttitle={data.product_name}
-                    productRating={data.productRating}
-                    reviewPercentage={data.reviewPercentage}
-                    productMerchant={data.product_tag}
-                    productFinalPrice={data.product_discounted_price}
-                    productPrice={data.product_price}
+                    productRating="4.0"
+                    reviewPercentage="90%"
+                    productMerchant={data.product_seller_name}
+                    productFinalPrice={data.product_price}
+                    productPrice={data.product_discount_percent}
                     buttonText={data.buttonText}
                     productImagePath={data.product_image_url}
-                    badgeData={data.product_discount_percent}
+                    badgeData={data.product_tag}
                   />
                 </div>
               );
@@ -604,7 +621,6 @@ function DashBoard() {
           </div>
         </div>
       </section>
-
     </>
   );
 }

@@ -12,11 +12,11 @@ const Card = (props) => {
     productMerchant,
     productFinalPrice,
     productPrice,
-    buttonText,
+
     badgeData,
   } = props;
   return (
-    <Link to={'/product-details'}>
+    <Link to={"/product-details"}>
       <div>
         <div class="card card-margin card-color">
           <div class="product-badges product-badges-position product-badges-mrg">
@@ -56,7 +56,7 @@ const Card = (props) => {
               <div class="product-rate d-inline-block">
                 <div
                   class="product-rating"
-                  style={{ width: reviewPercentage }}
+                  // style={{ width: reviewPercentage }}
                 ></div>
               </div>
               <span class="font-small ml-5 text-muted"> ({productRating})</span>
@@ -77,12 +77,12 @@ const Card = (props) => {
                 </h6>
               </div>
               <div class="col-lg-5 col-md-5">
-                <Link to={'/cart'}>
+                <Link to={"/cart"}>
                   <a href="./cart" class="btn float-end cart-button">
                     <span class="material-symbols-outlined">shopping_cart</span>
-                    {buttonText}
+                    ADD
                   </a>
-                  </Link>
+                </Link>
               </div>
             </div>
           </div>
