@@ -27,7 +27,7 @@ function DashBoard() {
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
-  });
+  },[]);
   return (
     <>
       <section className="mt-4">
