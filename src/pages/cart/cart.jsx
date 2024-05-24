@@ -1,26 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import options from "./countryList";
 import "./cart.css";
 import Newsletter from "../../components/newletter/newsletter";
 import Featured from "../../components/featured/featured";
 
-// const options = [
-//   { value: "chocolate", label: "Chocolate" },
-//   { value: "strawberry", label: "Strawberry" },
-//   { value: "vanilla", label: "Vanilla" },// ];
 const Cart = () => {
   const [quantities, setQuantities] = useState({
     product1: 1,
     product2: 1,
     product3: 1,
   });
-  
-   useEffect(() => {
-    window.scrollTo(0, 0)
-
-  });
-
   const handelIncrement = (product) => {
     setQuantities((preQuantites) => ({
       ...preQuantites,
@@ -34,6 +24,9 @@ const Cart = () => {
       [product]: Math.max(preQuantites[product] - 1, 1),
     }));
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section class="section-padding">
@@ -135,14 +128,12 @@ const Cart = () => {
                         <div class="detail-extralink mr-15">
                           <div class="detail-qty border radius">
                             <a
-                              href="#"
                               class="qty-up"
                               onClick={(e) => {
                                 e.preventDefault();
                                 handelIncrement("product1");
                               }}
                             >
-                              {/* <i class="fi-rs-angle-small-down"></i> */}
                               <span class="material-symbols-outlined">
                                 keyboard_arrow_up
                               </span>
@@ -155,14 +146,12 @@ const Cart = () => {
                               readOnly
                             />
                             <a
-                              href="#"
                               class="qty-down"
                               onClick={(e) => {
                                 e.preventDefault();
                                 handelDecrement("product1");
                               }}
                             >
-                              {/* <i class="fi-rs-angle-small-up"></i> */}
                               <span class="material-symbols-outlined">
                                 keyboard_arrow_down
                               </span>
@@ -228,7 +217,6 @@ const Cart = () => {
                         <div class="detail-extralink mr-15">
                           <div class="detail-qty border radius">
                             <a
-                              href="#"
                               class="qty-up"
                               onClick={(e) => {
                                 e.preventDefault();
@@ -247,11 +235,10 @@ const Cart = () => {
                               readOnly
                             />
                             <a
-                              href="#"
                               class="qty-down"
                               onClick={(e) => {
                                 e.preventDefault();
-                                handelDecrement("product2 ");
+                                handelDecrement("product2");
                               }}
                             >
                               <span class="material-symbols-outlined">
@@ -319,7 +306,6 @@ const Cart = () => {
                         <div class="detail-extralink mr-15">
                           <div class="detail-qty border radius">
                             <a
-                              href="#"
                               class="qty-up"
                               onClick={(e) => {
                                 e.preventDefault();
@@ -338,7 +324,6 @@ const Cart = () => {
                               readOnly
                             />
                             <a
-                              href="#"
                               class="qty-down"
                               onClick={(e) => {
                                 e.preventDefault();
