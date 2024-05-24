@@ -12,7 +12,7 @@ const Card = (props) => {
     productMerchant,
     productFinalPrice,
     productPrice,
-    buttonText,
+
     badgeData,
     hideButton = false,
     id
@@ -60,7 +60,7 @@ const Card = (props) => {
               <div class="product-rate d-inline-block">
                 <div
                   class="product-rating"
-                  style={{ width: reviewPercentage }}
+                  // style={{ width: reviewPercentage }}
                 ></div>
               </div>
               <span class="font-small ml-5 text-muted"> ({productRating})</span>

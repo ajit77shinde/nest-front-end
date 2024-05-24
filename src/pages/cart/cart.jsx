@@ -8,17 +8,32 @@ import Featured from "../../components/featured/featured";
 // const options = [
 //   { value: "chocolate", label: "Chocolate" },
 //   { value: "strawberry", label: "Strawberry" },
-//   { value: "vanilla", label: "Vanilla" },
-// ];
-
-
-
-
+//   { value: "vanilla", label: "Vanilla" },// ];
 const Cart = () => {
-  useEffect(() => {
+  const [quantities, setQuantities] = useState({
+    product1: 1,
+    product2: 1,
+    product3: 1,
+  });
+  
+   useEffect(() => {
     window.scrollTo(0, 0)
 
   });
+
+  const handelIncrement = (product) => {
+    setQuantities((preQuantites) => ({
+      ...preQuantites,
+      [product]: preQuantites[product] + 1,
+    }));
+  };
+
+  const handelDecrement = (product) => {
+    setQuantities((preQuantites) => ({
+      ...preQuantites,
+      [product]: Math.max(preQuantites[product] - 1, 1),
+    }));
+  };
   return (
     <>
       <section class="section-padding">
@@ -119,7 +134,14 @@ const Cart = () => {
                       <td class="text-center detail-info" data-title="Stock">
                         <div class="detail-extralink mr-15">
                           <div class="detail-qty border radius">
-                            <a href="#" class="qty-up">
+                            <a
+                              href="#"
+                              class="qty-up"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handelIncrement("product1");
+                              }}
+                            >
                               {/* <i class="fi-rs-angle-small-down"></i> */}
                               <span class="material-symbols-outlined">
                                 keyboard_arrow_up
@@ -129,10 +151,17 @@ const Cart = () => {
                               type="text"
                               name="quantity"
                               class="qty-val"
-                              value="1"
-                              min="1"
+                              value={quantities.product1}
+                              readOnly
                             />
-                            <a href="#" class="qty-down">
+                            <a
+                              href="#"
+                              class="qty-down"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handelDecrement("product1");
+                              }}
+                            >
                               {/* <i class="fi-rs-angle-small-up"></i> */}
                               <span class="material-symbols-outlined">
                                 keyboard_arrow_down
@@ -198,7 +227,14 @@ const Cart = () => {
                       <td class="text-center detail-info" data-title="Stock">
                         <div class="detail-extralink mr-15">
                           <div class="detail-qty border radius">
-                            <a href="#" class="qty-up">
+                            <a
+                              href="#"
+                              class="qty-up"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handelIncrement("product2");
+                              }}
+                            >
                               <span class="material-symbols-outlined">
                                 keyboard_arrow_up
                               </span>
@@ -207,10 +243,17 @@ const Cart = () => {
                               type="text"
                               name="quantity"
                               class="qty-val"
-                              value="1"
-                              min="1"
+                              value={quantities.product2}
+                              readOnly
                             />
-                            <a href="#" class="qty-down">
+                            <a
+                              href="#"
+                              class="qty-down"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handelDecrement("product2 ");
+                              }}
+                            >
                               <span class="material-symbols-outlined">
                                 keyboard_arrow_down
                               </span>
@@ -275,7 +318,14 @@ const Cart = () => {
                       <td class="text-center detail-info" data-title="Stock">
                         <div class="detail-extralink mr-15">
                           <div class="detail-qty border radius">
-                            <a href="#" class="qty-up">
+                            <a
+                              href="#"
+                              class="qty-up"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handelIncrement("product3");
+                              }}
+                            >
                               <span class="material-symbols-outlined">
                                 keyboard_arrow_up
                               </span>
@@ -284,10 +334,17 @@ const Cart = () => {
                               type="text"
                               name="quantity"
                               class="qty-val"
-                              value="1"
-                              min="1"
+                              value={quantities.product3}
+                              readOnly
                             />
-                            <a href="#" class="qty-down">
+                            <a
+                              href="#"
+                              class="qty-down"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handelDecrement("product3");
+                              }}
+                            >
                               <span class="material-symbols-outlined">
                                 keyboard_arrow_down
                               </span>
