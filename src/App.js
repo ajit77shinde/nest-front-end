@@ -12,6 +12,7 @@ import Deals from "./pages/deals";
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import Footer from "./components/footer/footer.jsx";
+import data from './assets/data'
 function App() {
   return (
     <>
@@ -23,7 +24,7 @@ function App() {
         <Route path="/" element={<DashBoard />} />
         <Route path="/home" element={<Home />} />
         <Route path="/deals" element={<Deals />} />
-        <Route path="/product-details" element={<ProductDetails />} />
+        <Route path="/product/:id" element={<ProductDetails data={data.productData}/>} />
         <Route path="/cart" element={<Cart />} />
         {/* <Route path="/live" element={<Live />} /> */}
         {/* <Route path="/contact" element={<Contact />} /> */}

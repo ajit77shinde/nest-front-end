@@ -13,7 +13,7 @@ const Header = () => {
             </div>
             {/* =====================header start here ===================== */}
             <div className="header-search d-flex align-items-center">
-              <span className="d-flex">
+              <span className="d-flex Search-box">
                 All Categories <span className="material-symbols-outlined">expand_more</span> |
               </span>
               <input type="text" placeholder="Search for items..."></input>

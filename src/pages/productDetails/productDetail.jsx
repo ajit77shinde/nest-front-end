@@ -1,14 +1,126 @@
-import React from "react";
-import { Category } from "../../components/category/category";
-import CategoryDropdown from "../../components/category/CategoryDropdown";
+import React, { useEffect, useRef, useState } from "react";
+// import { Category } from "../../components/category/category";
+// import CategoryDropdown from "../../components/category/CategoryDropdown";
 import { data } from "../../components/category/category_data";
 import "./productDetail.css";
 import { Rating } from "@mui/material";
 import CardList from "../../components/card/cardList";
-const ProductDetails = () => {
+import InnerImageZoom from 'react-inner-image-zoom';
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
+import CartTitle from "../../components/card/cardTitle";
+import { ProductData } from "../../components/card/cardData";
+import Card from "../../components/card/card";
+import Slider from "react-slick";
+import { useParams } from "react-router-dom";
+
+
+const ProductDetails = (props) => {
     const arrowSign = <span class="material-symbols-outlined">chevron_right</span>
     const homeSign = <span class="material-symbols-outlined">home</span>
     const value = 3.5;
+    const [currentProduct, setCurrentProduct] = useState({});
+    let { id } = useParams();
+    const [prodCat, setProdCat] = useState({
+        parentCat: sessionStorage.getItem('parentCat'),
+        subCatName: sessionStorage.getItem('subCatName')
+    });
+    const [relatedProducts, setRelatedProducts] = useState([]);
+    const [bigImageSize, setBigImageSize] = useState([1500, 1500]);
+    const [smlImageSize, setSmlImageSize] = useState([150, 150]);
+
+    const zoomSliderBig = useRef();
+    const zoomSlider = useRef();
+
+    var settings2 = {
+        dots: false,
+        infinite: false,
+        speed: 700,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: false,
+        arrows: false,
+    };
+
+
+    var settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        fade: false,
+        // arrows: true
+    };
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+
+        props.data.length !== 0 &&
+            props.data.map((item) => {
+                item.items.length !== 0 &&
+                    item.items.map((item_) => {
+                        item_.products.length !== 0 &&
+                            item_.products.map((product) => {
+                                if (parseInt(product.id) === parseInt(id)) {
+                                    setCurrentProduct(product);
+                                }
+                            })
+                    })
+            })
+
+
+        //related products code
+
+        const related_products = [];
+
+        props.data.length !== 0 &&
+            props.data.map((item) => {
+                if (prodCat.parentCat === item.cat_name) {
+                    item.items.length !== 0 &&
+                        item.items.map((item_) => {
+                            if (prodCat.subCatName === item_.cat_name) {
+                                item_.products.length !== 0 &&
+                                    item_.products.map((product, index) => {
+                                        if (product.id !== parseInt(id)) {
+                                            related_products.push(product)
+                                        }
+                                    })
+                            }
+                        })
+                }
+            })
+        if (related_products.length !== 0) {
+            setRelatedProducts(related_products)
+        }
+        // showReviews();
+        // getCartData("http://localhost:5000/cartItems");
+    }, [id]);
+
+    // const showReviews = async () => {
+    //     try {
+    //         await axios.get("http://localhost:5000/productReviews").then((response) => {
+    //             if (response.data.length !== 0) {
+    //                 response.data.map((item) => {
+    //                     if (parseInt(item.productId) === parseInt(id)) {
+    //                         reviews_Arr2.push(item)
+    //                     }
+    //                 })
+    //             }
+    //         })
+    //     } catch (error) {
+    //         console.log(error.message);
+    //     }
+    //     if (reviews_Arr2.length !== 0) {
+    //         setReviewsArr(reviews_Arr2);
+    //     }
+    // }
+
+    const goto = (index) => {
+
+        zoomSlider.current.slickGoTo(index);
+        zoomSliderBig.current.slickGoTo(index);
+    }
+    console.log("currentProduct = ", currentProduct);
     return (
         <>
             <div className="my-3 mx-5">
@@ -29,12 +141,51 @@ const ProductDetails = () => {
                 <hr />
                 <section className="my-3">
                     <div className="row row-cols-md-2">
-                        <div className="col-md-9 row">
-                            <div className="col-md-6">product Image </div>
+                        {/* Product Image section */}
+                        <div className="col-md-9 row ">
+                            <div className="col-md-6">
+                                <div className='productZoom'>
+                                    <Slider {...settings2} className='zoomSliderBig' ref={zoomSliderBig}>
+                                        {
+                                            currentProduct.productImages !== undefined &&
+                                            currentProduct.productImages.map((imgUrl, index) => {
+                                                return (
+                                                    <div className='item'>
+                                                        <InnerImageZoom
+                                                            zoomType="hover" zoomScale={1}
+                                                            src={`${imgUrl}?im=Resize=(${bigImageSize[0]},${bigImageSize[1]})`} />
 
-                            <div className="col-md-6 pl-3 pr-3">
+                                                    </div>
+                                                )
+                                            })
+                                        }
+
+                                    </Slider>
+                                </div>
+
+
+                                <Slider {...settings} className='zoomSlider' ref={zoomSlider}>
+
+                                    {
+                                        currentProduct.productImages !== undefined &&
+                                        currentProduct.productImages.map((imgUrl, index) => {
+                                            return (
+                                                <div className='item'>
+                                                    <img src={`${imgUrl}?im=Resize=(${smlImageSize[0]},${smlImageSize[1]})`} className='w-100'
+                                                        onClick={() => goto(index)} />
+                                                </div>
+                                            )
+                                        })
+                                    }
+
+
+                                </Slider>
+                            </div>
+
+
+                            <div className="col-md-6 product-details">
                                 <span className="stock-status out-stock">sale Off</span>
-                                <div className="title-detail">Seeds of Change Organic Quinoa, Brown</div>
+                                <div className="title-detail">{currentProduct.productName}</div>
                                 <div className="product-detail-rating">
                                     <Rating name="half-rating-read" value={3.5} precision={0.5} readOnly />
                                     <span>(32 review )</span>
@@ -67,7 +218,7 @@ const ProductDetails = () => {
                                     <div className="detail-qty radius ">
                                         <input type="number" name="quantity" class="qty-val" min="1" />
                                     </div>
-                                    <button type="button" class="btn btn-success lh-lg">
+                                    <button type="button" class="btn btn-success lh-base px-3">
                                         <span class="material-symbols-outlined">shopping_cart</span> Add to Cart</button>
 
                                     <button type="button" class="btn-extra"><span className="material-symbols-outlined">favorite_border</span></button>
@@ -101,6 +252,28 @@ const ProductDetails = () => {
                                     </div>
                                 </div> */}
                             </div>
+
+                            <CartTitle title="Related products" />
+                            {ProductData.map((data, index) => {
+                                return (
+                                    <div class="col-lg-1-3 col-md-3  col-sm-6 col-12">
+                                        <Card
+                                            id={index}
+                                            productImagePath={data.product_image_url}
+                                            // producttitle={data.product_name}
+                                            productRating={data.productRating}
+                                            productPrice={data.product_price}
+                                            productFinalPrice={data.product_discounted_price}
+                                            hideButton={true}
+                                            // reviewPercentage={data.reviewPercentage}
+                                            productCategory={data.product_category}
+                                            // productMerchant={data.product_tag}
+                                            // buttonText={data.buttonText}
+                                            badgeData={data.product_discount_percent}
+                                        />
+                                    </div>
+                                );
+                            })}
                         </div>
 
                         <div className="col-md-3">
@@ -118,7 +291,7 @@ const ProductDetails = () => {
                                     )
                                 } else return ("")
                             })}</CardList>
-                            <CardList title="Fill By Price">
+                            <CardList title="New products">
                                 <div class="product-list-small animated animated">
                                     <article class="row align-items-center hover-up">
                                         <figure class="col-md-4 mb-0">
@@ -213,7 +386,7 @@ const ProductDetails = () => {
                                 </div>
                             </CardList>
 
-                            
+
                         </div>
                     </div>
                 </section>

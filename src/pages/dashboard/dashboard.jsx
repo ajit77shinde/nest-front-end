@@ -80,10 +80,11 @@ function DashBoard() {
         <div class="container">
           {/* <div class="row"> */}
           <div class="row">
-            {product.map((data) => {
+            {ProductData.map((data, index) => {
               return (
                 <div class="col-lg-1-3 col-md-3  col-sm-6 col-12">
                   <Card
+                    id={index + 1}
                     productCategory={data.product_category}
                     producttitle={data.product_name}
                     productRating="4.0"
@@ -181,10 +182,11 @@ function DashBoard() {
                 </div>
               </div>
             </div>
-            {product.map((data) => {
+            {ProductData.map((data, index) => {
               return (
                 <div class="col-lg-1-3 col-md-3  col-sm-2 col-12">
                   <Card
+                    id={index+1}
                     productCategory={data.product_category}
                     producttitle={data.product_name}
                     productRating="4.0"
@@ -419,7 +421,7 @@ function DashBoard() {
             <div
               class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-lg-block wow animate__ animate__fadeInUp animated"
               data-wow-delay=".2s"
-              // style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
+            // style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
             >
               <h4 class="section-title style-1 mb-30 animated animated">
                 Recently added
@@ -520,7 +522,7 @@ function DashBoard() {
             <div
               class="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-xl-block wow animate__ animate__fadeInUp animated"
               data-wow-delay=".3s"
-              // style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
+            // style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
             >
               <h4 class="section-title style-1 mb-30 animated animated">
                 Top Rated

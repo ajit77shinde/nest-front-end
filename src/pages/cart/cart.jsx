@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Select from "react-select";
 import options from "./countryList";
 import "./cart.css";
@@ -14,6 +14,11 @@ const Cart = () => {
     product1: 1,
     product2: 1,
     product3: 1,
+  });
+  
+   useEffect(() => {
+    window.scrollTo(0, 0)
+
   });
 
   const handelIncrement = (product) => {
