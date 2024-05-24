@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Select from "react-select";
 import options from "./countryList";
 import "./cart.css";
@@ -11,7 +11,14 @@ import Featured from "../../components/featured/featured";
 //   { value: "vanilla", label: "Vanilla" },
 // ];
 
+
+
+
 const Cart = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+
+  });
   return (
     <>
       <section class="section-padding">

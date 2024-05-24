@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./card.css";
 import { Link } from "react-router-dom";
 
@@ -14,12 +14,13 @@ const Card = (props) => {
     productPrice,
     buttonText,
     badgeData,
-    hideButton = false
+    hideButton = false,
+    id
   } = props;
 
-  console.log("hideButton = ", hideButton)
+  
   return (
-    <Link to={'/product-details'}>
+    <Link to={`/product/${id}`}>
       <div>
         <div class="card card-margin card-color">
           <div class="product-badges product-badges-position product-badges-mrg">

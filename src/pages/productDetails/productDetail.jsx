@@ -94,7 +94,7 @@ const ProductDetails = (props) => {
         }
         // showReviews();
         // getCartData("http://localhost:5000/cartItems");
-    }, []);
+    }, [id]);
 
     // const showReviews = async () => {
     //     try {
@@ -120,6 +120,7 @@ const ProductDetails = (props) => {
         zoomSlider.current.slickGoTo(index);
         zoomSliderBig.current.slickGoTo(index);
     }
+    console.log("currentProduct = ", currentProduct);
     return (
         <>
             <div className="my-3 mx-5">
@@ -184,7 +185,7 @@ const ProductDetails = (props) => {
 
                             <div className="col-md-6 product-details">
                                 <span className="stock-status out-stock">sale Off</span>
-                                <div className="title-detail">Seeds of Change Organic Quinoa, Brown</div>
+                                <div className="title-detail">{currentProduct.productName}</div>
                                 <div className="product-detail-rating">
                                     <Rating name="half-rating-read" value={3.5} precision={0.5} readOnly />
                                     <span>(32 review )</span>
@@ -253,10 +254,11 @@ const ProductDetails = (props) => {
                             </div>
 
                             <CartTitle title="Related products" />
-                            {ProductData.map((data) => {
+                            {ProductData.map((data, index) => {
                                 return (
                                     <div class="col-lg-1-3 col-md-3  col-sm-6 col-12">
                                         <Card
+                                            id={index}
                                             productImagePath={data.product_image_url}
                                             // producttitle={data.product_name}
                                             productRating={data.productRating}
